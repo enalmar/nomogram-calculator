@@ -6,12 +6,18 @@ do not mention: the 60% personal allowance taper between £100,000 and £125,140
 High Income Child Benefit Charge, the £100,000 childcare cliff, student loan
 repayments, and the Scottish rates.
 
-**Live:** https://enalmar.github.io/nomogram-calculator/
+**Live:** https://nomogram.uk
 
 ## What this repository is
 
 The built static output, and nothing else. It is published here so GitHub Pages can
 serve it; the source lives in a separate private repository.
+
+`CNAME` points the site at nomogram.uk and is emitted by the build, so it survives a
+deploy — the published tree is replaced wholesale each time, and anything the build
+does not emit would be dropped. The site is built to be served from the **root** for
+that reason; a build made for a project subpath 404s every asset when a custom
+domain is in front of it.
 
 There is no server. Every figure is computed in the browser by a zero-dependency
 tax engine, which is why the site stores nothing, sets no cookies, and has no
